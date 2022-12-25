@@ -42,20 +42,15 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+#Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='lvim'
+else
+  export EDITOR='lvim'
+fi
 
  alias zshrc="nvim ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
 # Custom PATH
 export PATH=~/.local/bin:$PATH
-export ANDROID_HOME=$HOME/Android/Sdk
-
-# Fix android studio not working with wayland
-_JAVA_AWT_WM_NONREPARENTING=1
+eval "$(starship init zsh)"
