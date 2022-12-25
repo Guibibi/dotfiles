@@ -1,0 +1,35 @@
+/*Colors
+Primary:#ecf0c1 
+#Foreground: #1b1c36;
+Background: #0f111b
+
+
+ */
+
+window#waybar {
+  color: #ecf0c1;
+  background-color: #0f111b;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: #ecf0c1;
+}
+
+#workspaces button.focused {
+		background-color: #1b1c36; 
+    color: #FFFFFF;
+    border-bottom: none;
+    border-radius: 5px;
+}
+
+#clock,
+#idle_inhibitor,
+#network,
+#pulseaudio {
+  padding: 0 8px;
+  margin: 8px 4px;
+  color: #ffffff;
+	background-color: #1b1c36; 
+  border-radius: 5px;
+}

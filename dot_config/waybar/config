@@ -1,0 +1,65 @@
+{
+	"layer": "top",
+		"height": 30,
+		"modules-left": ["sway/workspaces", "sway/mode"],
+		"modules-center": ["hyprland/window"],
+		"modules-right": ["clock", "idle_inhibitor", "network", "pulseaudio"],
+		"sway/window": {
+			"max-length": 50
+		},
+		"hyprland/window": {
+			"format": "{}",
+			"separate-outputs": true
+		},
+		"sway/workspaces": {
+			"disable-scroll": true,
+		},
+		"clock": {
+			"format-alt": "{:%a, %d. %b  %H:%M}",
+			"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		},
+		"custom/notification": {
+			"tooltip": false,
+			"format": "{icon}",
+			"format-icons": {
+				"notification": "<span foreground='red'><sup></sup></span>",
+				"none": "",
+				"dnd-notification": "<span foreground='red'><sup></sup></span>",
+				"dnd-none": ""
+			},
+			"return-type": "json",
+			"exec-if": "which swaync-client",
+			"exec": "swaync-client -swb",
+			"on-click": "swaync-client -t -sw",
+			"on-click-right": "swaync-client -d -sw",
+			"escape": true
+		},
+		"network": {
+			"format": "{ifname}",
+			"format-ethernet": "{ifname} ",
+			"format-wifi": "{essid} ",
+			"format-linked": "{ifname} (No IP) ",
+			"format-disconnected": "Disconnected ⚠",
+			"format-alt": "{ifname}: {ipaddr}/{cidr}",
+			"tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+		},
+		"pulseaudio": {
+			"scroll-step": 0,
+			"format": "{icon} {volume}    {format_source}",
+			"format-bluetooth": "{volume}% {icon} {format_source}",
+			"format-bluetooth-muted": " {icon} {format_source}",
+			"format-muted": " {format_source}",
+			"format-source": " {volume}",
+			"format-source-muted": "",
+			"format-icons": {
+				"headphone": "",
+				"hands-free": "",
+				"headset": "",
+				"phone": "",
+				"portable": "",
+				"car": "",
+				"default": ["", "", ""]
+			},
+			"on-click": "pavucontrol"
+		},
+}
