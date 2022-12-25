@@ -101,7 +101,7 @@ cherry_pick = "🍒 PICKING"
 disabled = false
 threshold = 1
 show_percentage = false
-show_swap = true
+show_swap = false
 # style = "bold dimmed green"
 style = "bold gray"
 
